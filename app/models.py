@@ -1,6 +1,6 @@
 # _*_ coding: utf-8 _*_
-__author__ = 'mtianyan'
-__date__ = '2017/8/26 17:05'
+__author__ = 'weixiong'
+__date__ = '2020/3/10'
 
 from datetime import datetime
 from app import db
@@ -199,25 +199,25 @@ class Oplog(db.Model):
 
     def __repr__(self):
         return "<Oplog %r>" % self.id
-
+#
 # if __name__ == "__main__":
 #     db.create_all()
-
-    # 测试数据的插入
-
-    # role = Role(
-    #     name="超级管理员",
-    #     auths=""
-    # )
-    # db.session.add(role)
-    # db.session.commit()
-    # from werkzeug.security import generate_password_hash
-    #
-    # admin = Admin(
-    #     name="mtianyanmovie",
-    #     pwd=generate_password_hash("mtianyanmovie"),
-    #     is_super=0,
-    #     role_id=1
-    # )
-    # db.session.add(admin)
-    # db.session.commit()
+#
+#     #测试数据的插入
+#
+#     role = Role(
+#         name="superuser",
+#         auths=""
+#     )
+#     db.session.add(role)
+#     db.session.commit()
+#     from werkzeug.security import generate_password_hash
+#
+#     admin = Admin(
+#         name="admin",
+#         pwd=generate_password_hash("admin"),
+#         is_super=0,
+#         role_id=1
+#     )
+#     db.session.add(admin)
+#     db.session.commit()

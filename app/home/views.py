@@ -5,7 +5,7 @@ from functools import wraps
 import os
 from werkzeug.utils import secure_filename
 
-__author__ = 'mtianyan'
+__author__ = 'weixiong'
 __date__ = '2017/8/26 17:07'
 
 import uuid

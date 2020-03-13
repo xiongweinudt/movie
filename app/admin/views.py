@@ -1,5 +1,5 @@
 # _*_ coding: utf-8 _*_
-__author__ = 'mtianyan'
+__author__ = 'weixiong'
 __date__ = '2017/8/26 17:06'
 
 import os
@@ -50,7 +50,7 @@ def tpl_extra():
         admin = None
     data = dict(
         online_time=datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        logo="mtianyan.jpg",
+        logo="weixiong.jpg",
         admin=admin,
     )
     # 之后直接传个admin。取admin face字段即可
@@ -97,7 +97,7 @@ def login():
         session["admin"] = data["account"]
         session["admin_id"] = admin.id
         # admin = Admin.query.filter_by(name=session["admin"]).first()
-        # g.logo = "mtianyan.jpg"
+        # g.logo = "weixiong.jpg"
         # 后台头像实现的可能解决方法，将当前管理员的头像信息，存在session中。
         adminlog = Adminlog(
             admin_id=admin.id,
@@ -148,7 +148,7 @@ def index():
     """
     后台首页系统管理
     """
-    g.logo = "mtianyan.jpg"
+    g.logo = "weixiong.jpg"
     return render_template("admin/index.html")
 
 
@@ -271,7 +271,7 @@ def movie_add():
             commentnum=0,
             tag_id=int(data["tag_id"]),
             area=data["area"],
-            release_time=data["release_time"],
+            release_time=datetime.strptime(data["release_time"], "%Y-%m-%d").date(),
             length=data["length"]
         )
         db.session.add(movie)
