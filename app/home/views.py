@@ -205,7 +205,7 @@ def loginlog(page=None):
         user_id=int(session["user_id"])
     ).order_by(
         Userlog.addtime.desc()
-    ).paginate(page=page, per_page=2)
+    ).paginate(page=page, per_page=10)
     return render_template("home/loginlog.html", page_data=page_data)
 
 
@@ -254,7 +254,7 @@ def moviecol(page=None):
         User.id == session["user_id"]
     ).order_by(
         Moviecol.addtime.desc()
-    ).paginate(page=page, per_page=2)
+    ).paginate(page=page, per_page=10)
     return render_template("home/moviecol.html", page_data=page_data)
 
 

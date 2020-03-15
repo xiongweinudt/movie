@@ -220,7 +220,7 @@ def tag_list(page=None):
         page = 1
     page_data = Tag.query.order_by(
         Tag.addtime.desc()
-    ).paginate(page=page, per_page=1)
+    ).paginate(page=page, per_page=app.config["PAGE_SIZE"])
     return render_template("admin/tag_list.html", page_data=page_data)
 
 
@@ -295,7 +295,7 @@ def movie_list(page=None):
         Tag.id == Movie.tag_id
     ).order_by(
         Movie.addtime.desc()
-    ).paginate(page=page, per_page=1)
+    ).paginate(page=page, per_page=app.config["PAGE_SIZE"])
     return render_template("admin/movie_list.html", page_data=page_data)
 
 
@@ -403,7 +403,7 @@ def preview_list(page=None):
         page = 1
     page_data = Preview.query.order_by(
         Preview.addtime.desc()
-    ).paginate(page=page, per_page=1)
+    ).paginate(page=page, per_page=app.config["PAGE_SIZE"])
     return render_template("admin/preview_list.html", page_data=page_data)
 
 
@@ -459,7 +459,7 @@ def user_list(page=None):
         page = 1
     page_data = User.query.order_by(
         User.addtime.desc()
-    ).paginate(page=page, per_page=1)
+    ).paginate(page=page, per_page=app.config["PAGE_SIZE"])
     return render_template("admin/user_list.html", page_data=page_data)
 
 
@@ -516,7 +516,7 @@ def comment_list(page=None):
         User.id == Comment.user_id
     ).order_by(
         Comment.addtime.desc()
-    ).paginate(page=page, per_page=1)
+    ).paginate(page=page, per_page=app.config["PAGE_SIZE"])
     return render_template("admin/comment_list.html", page_data=page_data)
 
 
@@ -558,7 +558,7 @@ def moviecol_list(page=None):
         User.id == Moviecol.user_id
     ).order_by(
         Moviecol.addtime.desc()
-    ).paginate(page=page, per_page=1)
+    ).paginate(page=page, per_page=app.config["PAGE_SIZE"])
     return render_template("admin/moviecol_list.html", page_data=page_data)
 
 
@@ -615,7 +615,7 @@ def adminloginlog_list(page=None):
         Admin.id == Adminlog.admin_id,
     ).order_by(
         Adminlog.addtime.desc()
-    ).paginate(page=page, per_page=1)
+    ).paginate(page=page, per_page=app.config["PAGE_SIZE"])
     return render_template("admin/adminloginlog_list.html", page_data=page_data)
 
 
@@ -818,5 +818,5 @@ def admin_list(page=None):
         Role.id == Admin.role_id
     ).order_by(
         Admin.addtime.desc()
-    ).paginate(page=page, per_page=1)
+    ).paginate(page=page, per_page=app.config["PAGE_SIZE"])
     return render_template("admin/admin_list.html", page_data=page_data)

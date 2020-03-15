@@ -17,6 +17,7 @@ app.config["REDIS_URL"] = "redis://127.0.0.1:6379/0"
 app.config['SECRET_KEY'] = 'example_movie'
 app.config["UP_DIR"] = os.path.join(os.path.abspath(os.path.dirname(__file__)), "static/uploads/")
 app.config["FC_DIR"] = os.path.join(os.path.abspath(os.path.dirname(__file__)), "static/uploads/users/")
+app.config["PAGE_SIZE"] = 10
 app.debug = False
 db = SQLAlchemy(app)
 rd = FlaskRedis(app)
